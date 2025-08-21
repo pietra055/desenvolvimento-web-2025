@@ -1,80 +1,38 @@
-# [Título do seu projeto]
-<!-- EXEMPLO: "AtendeAí — Fila de Ajuda em Sala" -->
+# [Site para vendas]
 
 ## 1) Problema
-<!-- Escreva o problema sem falar de telas/tecnologias.
-     Responda: Quem sofre? Onde? O que atrapalha? Por que isso importa?
-     EXEMPLO: Em aulas práticas, alunos esperam muito para serem atendidos.
-     Há filas confusas e frustração. O professor não vê ordem nem tempo de espera.
-     Objetivo inicial: organizar a fila para reduzir a espera e garantir justiça. -->
-[Quem], em [contexto], tem dificuldade em [tarefa/dor].
-Isso causa [efeito mensurável].
-No início, o foco será [público principal] com o objetivo de [resultado simples].
+      Uma loja não possui site para vendas e mostruário, isso acaba resultando 
+      em frustração, tanto da parte do consumidor que não pode agilizar as compras, 
+      quanto da parte do vendedor que não lucra com mais vendas.
+      Objetivo inicial: cadastrar clientes e fazer o mostruário das roupas para otimizar o tempo dos vendedores.
+     
 
 ## 2) Atores e Decisores (quem usa / quem decide)
-<!-- Liste papéis (não nomes).
-     EXEMPLO:
-     Usuários principais: Alunos da turma de Desenvolvimento Web
-     Decisores/Apoiadores: Professores da disciplina; Coordenação do curso -->
-Usuários principais: [lista]
-Decisores/Apoiadores: [lista]
+     Usuários principais: Clientes e consumidores da loja.
+     Decisores/Apoiadores: Vendedores e gerentes.
 
 ## 3) Casos de uso (de forma simples)
-<!-- Formato "Ator: ações que pode fazer".
-     DICA: Use "Manter (inserir, mostrar, editar, remover)" quando for CRUD.
-     EXEMPLO:
-     Todos: Logar/deslogar do sistema; Manter dados cadastrais
-     Professor: Manter (inserir, mostrar, editar, remover) todos os chamados
-     Aluno: Manter (inserir, mostrar, editar, remover) seus chamados -->
-Todos: [ações comuns, ex.: Logar/deslogar; Manter dados cadastrais]  
-[Ator 1]: [ações do ator 1]  
-[Ator 2]: [ações do ator 2]
+     Todos: Logar/deslogar do sistema; manter dados cadastrais.
+     Vendedor/Gerente: Manter (inserir, mostrar, editar, remover) todos os catálogos.
+     Cliente/Consumidor: Manter (inserir, mostrar, editar, remover) seu carrinho de compras do site.
 
 ## 4) Limites e suposições
-<!-- Simples assim:
-     - Limites = regras/prazos/obrigações que você não controla.
-     - Suposições = coisas que você espera ter e podem falhar.
-     - Plano B = como você segue com a 1ª fatia se algo falhar.
-     EXEMPLO:
-     Limites: entrega final até o fim da disciplina (ex.: 2025-11-30); rodar no navegador; sem serviços pagos.
+     Limites: entrega final até o fim da disciplina (2025-12-18); rodar no navegador; sem serviços pagos.
      Suposições: internet no laboratório; navegador atualizado; acesso ao GitHub; 10 min para teste rápido.
      Plano B: sem internet → rodar local e salvar em arquivo/LocalStorage; sem tempo do professor → testar com 3 colegas. -->
-Limites: [prazo final], [regras/tecnologias obrigatórias], [restrições]  
-Suposições: [internet/navegador/GitHub/tempo de teste]  
-Plano B: [como continua entregando a 1ª fatia se algo falhar]
 
 ## 5) Hipóteses + validação
-<!-- Preencha as duas frases abaixo. Simples e direto.
-     EXEMPLO Valor: Se o aluno ver sua posição na fila, sente mais controle e conclui melhor a atividade.
-     Validação: teste com 5 alunos; sucesso se ≥4 abrem/fecham chamado sem ajuda.
-     EXEMPLO Viabilidade: Com app no navegador (HTML/CSS/JS + armazenamento local),
-     criar e listar chamados responde em até 1 segundo na maioria das vezes (ex.: 9 de cada 10).
-     Validação: medir no protótipo com 30 ações; meta: pelo menos 27 de 30 ações (9/10) em 1s ou menos. -->
-H-Valor: Se [X], então [Y] melhora em [critério].  
-Validação (valor): [teste rápido/observação]; alvo: [meta simples].
-
-H-Viabilidade: Com [tecnologia], [ação/tela] leva até [n] s.  
-Validação (viabilidade): [medição no protótipo]; meta: [n] s ou menos na maioria das vezes (ex.: 9/10).
+     Valor: Se o cliente possuir um site para inspeção de produtos, ele fica mais confortável em comprar naquela loja.
+     Validação: teste com 10 clientes em loja; sucesso se ≥9 abrem/fecham o site ou cadastro sem ajuda.
 
 ## 6) Fluxo principal e primeira fatia
-<!-- Pense “Entrada → Processo → Saída”.
-     EXEMPLO de Fluxo:
-     1) Aluno faz login
-     2) Clica em "Pedir ajuda" e descreve a dúvida
-     3) Sistema salva e coloca na fila
-     4) Lista mostra ordem e tempo desde criação
-     5) Professor encerra o chamado
-     EXEMPLO de 1ª fatia:
-     Inclui login simples, criar chamado, listar em ordem.
-     Critérios de aceite (objetivos): criar → aparece na lista com horário; encerrar → some ou marca "fechado". -->
-**Fluxo principal (curto):**  
-1) [entrada do usuário] → 2) [processo] → 3) [salvar algo] → 4) [mostrar resultado]
-
-**Primeira fatia vertical (escopo mínimo):**  
-Inclui: [uma tela], [uma ação principal], [salvar], [mostrar algo]  
-Critérios de aceite:
-- [Condição 1 bem objetiva]
-- [Condição 2 bem objetiva]
+     1) Cliente entra e faz seu cadastro no site
+     2) Primeira página vai ter o mostruário de roupas
+     3) Clica em uma peça que gosta e adiciona no carrinho de compras de acordo com seu tamanho
+     4) Cliente vai na aba do carrinho e confirma seu pedido
+     5) Abre a aba de opções de pagamento
+     6) Cliente tem a opção de retirar no local ou mandar entregar sua compra
+     7) Vendedor recebe o pedido e aceita pelo site para começar o preparo
 
 ## 7) Esboços de algumas telas (wireframes)
 <!-- Vale desenho no papel (foto), Figma, Excalidraw, etc. Não precisa ser bonito, precisa ser claro.
