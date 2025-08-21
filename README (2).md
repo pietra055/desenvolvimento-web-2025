@@ -59,7 +59,7 @@
 ### 8.3 Back-end (API/servidor, se existir)
 - **Back-end (API):** JavaScript com Express 
 - **Banco de dados:** MySql ou Postgre
-- **Deploy do back-end:** Estudar o que fazer
+- **Deploy do back-end:** Estudando o que fazer
 
 ## 9) Plano de Dados (Dia 0) — somente itens 1–3
 
