@@ -1,10 +1,10 @@
 # [Cida Modas - Site para vendas]
 
 ## 1) Problema
-     - Uma loja não possui site para vendas e mostruário, isso acaba resultando 
+ - Uma loja não possui site para vendas e mostruário, isso acaba resultando 
       em frustração, tanto da parte do consumidor que não pode agilizar as compras, 
       quanto da parte do vendedor que não lucra com mais vendas.
-     - Objetivo inicial: cadastrar clientes e fazer o mostruário das roupas para otimizar o tempo dos vendedores.
+- Objetivo inicial: cadastrar clientes e fazer o mostruário das roupas para otimizar o tempo dos vendedores.
      
 
 ## 2) Atores e Decisores (quem usa / quem decide)
