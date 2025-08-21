@@ -48,18 +48,18 @@
 ## 8) Tecnologias
 
 ### 8.1 Navegador
-**Navegador:** HTML/CSS/JS/Bootstrap  
-**Armazenamento local** 
-**Hospedagem:** GitHub Pages
+- **Navegador:** HTML/CSS/JS/Bootstrap  
+- **Armazenamento local** 
+- **Hospedagem:** GitHub Pages
 
 ### 8.2 Front-end (servidor de aplicação, se existir)
-**Front-end (servidor):** React  
-**Hospedagem:** Github Pages
+- **Front-end (servidor):** React  
+- **Hospedagem:** Github Pages
 
 ### 8.3 Back-end (API/servidor, se existir)
-**Back-end (API):** JavaScript com Express 
-**Banco de dados:** MySql ou Postgre
-**Deploy do back-end:** Estudar o que fazer
+- **Back-end (API):** JavaScript com Express 
+- **Banco de dados:** MySql ou Postgre
+- **Deploy do back-end:** Estudar o que fazer
 
 ## 9) Plano de Dados (Dia 0) — somente itens 1–3
 
