@@ -1,4 +1,4 @@
-# [Site para vendas]
+# [Cida Modas - Site para vendas]
 
 ## 1) Problema
       Uma loja não possui site para vendas e mostruário, isso acaba resultando 
