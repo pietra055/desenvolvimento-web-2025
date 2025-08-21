@@ -1,29 +1,29 @@
 # [Cida Modas - Site para vendas]
 
 ## 1) Problema
-      Uma loja não possui site para vendas e mostruário, isso acaba resultando 
+     - Uma loja não possui site para vendas e mostruário, isso acaba resultando 
       em frustração, tanto da parte do consumidor que não pode agilizar as compras, 
       quanto da parte do vendedor que não lucra com mais vendas.
-      Objetivo inicial: cadastrar clientes e fazer o mostruário das roupas para otimizar o tempo dos vendedores.
+     - Objetivo inicial: cadastrar clientes e fazer o mostruário das roupas para otimizar o tempo dos vendedores.
      
 
 ## 2) Atores e Decisores (quem usa / quem decide)
-     Usuários principais: Clientes e consumidores da loja.
-     Decisores/Apoiadores: Vendedores e gerentes.
+    - Usuários principais: Clientes e consumidores da loja.
+    - Decisores/Apoiadores: Vendedores e gerentes.
 
 ## 3) Casos de uso (de forma simples)
-     Todos: Logar/deslogar do sistema; manter dados cadastrais.
-     Vendedor/Gerente: Manter (inserir, mostrar, editar, remover) todos os catálogos.
-     Cliente/Consumidor: Manter (inserir, mostrar, editar, remover) seu carrinho de compras do site.
+    - Todos: Logar/deslogar do sistema; manter dados cadastrais.
+    - Vendedor/Gerente: Manter (inserir, mostrar, editar, remover) todos os catálogos.
+    - Cliente/Consumidor: Manter (inserir, mostrar, editar, remover) seu carrinho de compras do site.
 
 ## 4) Limites e suposições
-     Limites: entrega final até o fim da disciplina (2025-12-18); rodar no navegador; sem serviços pagos.
-     Suposições: internet no laboratório; navegador atualizado; acesso ao GitHub; 10 min para teste rápido.
-     Plano B: sem internet → rodar local e salvar em arquivo/LocalStorage; sem tempo do professor → testar com 3 colegas. -->
+    - Limites: entrega final até o fim da disciplina (2025-12-18); rodar no navegador; sem serviços pagos.
+    - Suposições: internet no laboratório; navegador atualizado; acesso ao GitHub; 10 min para teste rápido.
+    - Plano B: sem internet → rodar local e salvar em arquivo/LocalStorage; sem tempo do professor → testar com 3 colegas. -->
 
 ## 5) Hipóteses + validação
-     Valor: Se o cliente possuir um site para inspeção de produtos, ele fica mais confortável em comprar naquela loja.
-     Validação: teste com 10 clientes em loja; sucesso se ≥9 abrem/fecham o site ou cadastro sem ajuda.
+    - Valor: Se o cliente possuir um site para inspeção de produtos, ele fica mais confortável em comprar naquela loja.
+    - Validação: teste com 10 clientes em loja; sucesso se ≥9 abrem/fecham o site ou cadastro sem ajuda.
 
 ## 6) Fluxo principal e primeira fatia
      1) Cliente entra e faz seu cadastro no site
