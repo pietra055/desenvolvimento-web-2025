@@ -46,24 +46,22 @@
 [Links ou imagens dos seus rascunhos de telas aqui]
 
 ## 8) Tecnologias
-<!-- Liste apenas o que você REALMENTE pretende usar agora. -->
 
 ### 8.1 Navegador
-**Navegador:** [HTML/CSS/JS | React/Vue/Bootstrap/etc., se houver]  
-**Armazenamento local (se usar):** [LocalStorage/IndexedDB/—]  
-**Hospedagem:** [GitHub Pages/—]
+**Navegador:** HTML/CSS/JS/Bootstrap  
+**Armazenamento local** 
+**Hospedagem:** GitHub Pages
 
 ### 8.2 Front-end (servidor de aplicação, se existir)
-**Front-end (servidor):** [ex.: Next.js/React/—]  
-**Hospedagem:** [ex.: Vercel/—]
+**Front-end (servidor):** React  
+**Hospedagem:** Github Pages
 
 ### 8.3 Back-end (API/servidor, se existir)
-**Back-end (API):** [ex.: FastAPI/Express/PHP/Laravel/Spring/—]  
-**Banco de dados:** [ex.: SQLite/Postgres/MySQL/MongoDB/—]  
-**Deploy do back-end:** [ex.: Render/Railway/—]
+**Back-end (API):** JavaScript com Express 
+**Banco de dados:** MySql ou Postgre
+**Deploy do back-end:** Estudar o que fazer
 
 ## 9) Plano de Dados (Dia 0) — somente itens 1–3
-<!-- Defina só o essencial para criar o banco depois. -->
 
 ### 9.1 Entidades
 <!-- EXEMPLO:
