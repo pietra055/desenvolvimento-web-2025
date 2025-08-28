@@ -35,15 +35,14 @@
      7) Vendedor recebe o pedido e aceita pelo site para começar o preparo
 
 ## 7) Esboços de algumas telas (wireframes)
-<!-- Vale desenho no papel (foto), Figma, Excalidraw, etc. Não precisa ser bonito, precisa ser claro.
-     EXEMPLO de telas:
-     • Login
-     • Lista de chamados (ordem + tempo desde criação)
-     • Novo chamado (formulário simples)
-     • Painel do professor (atender/encerrar)
-     EXEMPLO de imagem:
-     ![Wireframe - Lista de chamados](img/wf-lista-chamados.png) -->
-![Wireframe - Tela de Login] (./images/teladelogin.png)
+- Tela de Login:
+![Wireframe - Tela de Login](./images/teladelogin.png)
+- Tela Principal:
+![Wireframe - Tela Principal](./images/telaprincipal.png)
+- Tela do Produto:
+![Wireframe - Tela do Produto](./images/telaproduto.png)
+- Tela da Sacola/Carrinho:
+![Wireframe - Tela da Sacola/Carrinho](./images/telasacola.png)
 
 ## 8) Tecnologias
 
