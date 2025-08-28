@@ -43,7 +43,7 @@
      • Painel do professor (atender/encerrar)
      EXEMPLO de imagem:
      ![Wireframe - Lista de chamados](img/wf-lista-chamados.png) -->
-[Links ou imagens dos seus rascunhos de telas aqui]
+- Wireframe - Tela de Login (images/Tela de Login.png)
 
 ## 8) Tecnologias
 
