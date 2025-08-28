@@ -14,7 +14,7 @@
 ## 3) Casos de uso (de forma simples)
 - Todos: Logar/deslogar do sistema; manter dados cadastrais.
 - Vendedor/Gerente: Manter (inserir, mostrar, editar, remover) todos os catálogos.
-- Cliente/Consumidor: Manter (inserir, mostrar, editar, remover) seu carrinho de compras do site.
+- Cliente/Consumidor: Manter (inserir, mostrar, editar, remover) sua sacola de compras do site.
 
 ## 4) Limites e suposições
 - Limites: entrega final até o fim da disciplina (2025-12-18); rodar no navegador; sem serviços pagos.
@@ -28,7 +28,7 @@
 ## 6) Fluxo principal e primeira fatia
      1) Cliente entra e faz seu cadastro no site
      2) Primeira página vai ter o mostruário de roupas
-     3) Clica em uma peça que gosta e adiciona no carrinho de compras de acordo com seu tamanho
+     3) Clica em uma peça que gosta e adiciona na sacola de compras de acordo com seu tamanho
      4) Cliente vai na aba do carrinho e confirma seu pedido
      5) Abre a aba de opções de pagamento
      6) Cliente tem a opção de retirar no local ou mandar entregar sua compra
@@ -64,40 +64,33 @@
 ## 9) Plano de Dados (Dia 0) — somente itens 1–3
 
 ### 9.1 Entidades
-<!-- EXEMPLO:
-     - Usuario — pessoa que usa o sistema (aluno/professor)
-     - Chamado — pedido de ajuda criado por um usuário -->
-- [Entidade 1] — [o que representa em 1 linha]
-- [Entidade 2] — [...]
-- [Entidade 3] — [...]
+- Usuário - pessoa que utiliza o site para fins prórpios(cliente/funcionário)
+- Sacola - lugar onde fica salvo os produtos que o usuário quer comprar
+- Produto - peças que os clientes gostam e podem comprar
 
 ### 9.2 Campos por entidade
-<!-- Use tipos simples: uuid, texto, número, data/hora, booleano, char. -->
 
 ### Usuario
 | Campo           | Tipo                          | Obrigatório | Exemplo            |
 |-----------------|-------------------------------|-------------|--------------------|
 | id              | número                        | sim         | 1                  |
-| nome            | texto                         | sim         | "Ana Souza"        |
-| email           | texto                         | sim (único) | "ana@exemplo.com"  |
+| nome            | texto                         | sim         | "Pietra Andrade"   |
+| email           | texto                         | sim (único) | "pi@exemplo.com"   |
 | senha_hash      | texto                         | sim         | "$2a$10$..."       |
-| papel           | número (0=aluno, 1=professor) | sim         | 0                  |
-| dataCriacao     | data/hora                     | sim         | 2025-08-20 14:30   |
-| dataAtualizacao | data/hora                     | sim         | 2025-08-20 15:10   |
+| papel           | número (0=cliente, 1=gerente) | sim         | 0                  |
+| dataCriacao     | data/hora                     | sim         | 2025-08-28 08:19   |
+| dataAtualizacao | data/hora                     | sim         | 2025-08-28 10:00   |
 
-### Chamado
+### Sacola
 | Campo           | Tipo               | Obrigatório | Exemplo                 |
 |-----------------|--------------------|-------------|-------------------------|
 | id              | número             | sim         | 2                       |
 | Usuario_id      | número (fk)        | sim         | 8f3a-...                |
 | texto           | texto              | sim         | "Erro ao compilar"      |
 | estado          | char               | sim         | 'a' \| 'f'              |
-| dataCriacao     | data/hora          | sim         | 2025-08-20 14:35        |
-| dataAtualizacao | data/hora          | sim         | 2025-08-20 14:50        |
+| dataCriacao     | data/hora          | sim         | 2025-08-20 08:19        |
+| dataAtualizacao | data/hora          | sim         | 2025-08-20 10:00        |
 
 ### 9.3 Relações entre entidades
-<!-- Frases simples bastam. EXEMPLO:
-     Um Usuario tem muitos Chamados (1→N).
-     Um Chamado pertence a um Usuario (N→1). -->
-- Um [A] tem muitos [B]. (1→N)
-- Um [B] pertence a um [A]. (N→1)
+- Um cliente possui muitos produtos na sacola. (1→N)
+- Uma sacola pertence a um Usuario. (N→1)
