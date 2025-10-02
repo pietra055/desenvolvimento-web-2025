@@ -42,7 +42,7 @@ app.get("/produtos/:id", async (req, res) => {
     try {
         // Consulta parametrizada: $1 será substituído pelo valor de "id".
         const result = await pool.query("SELECT * FROM produtos WHERE id = $1", [id]);
-
+        
         // "rows" é um array de linhas. Se não houver primeira linha, não achou.
         const { rows } = result;
         if (!rows[0]) return res.status(404).json({ erro: "não encontrado" });
