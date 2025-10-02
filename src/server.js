@@ -20,7 +20,7 @@ app.get("/", async (_req, res) => {
         res.status(500).json({ erro: "erro interno" });
     }
 });
-
+//LISTAR (GET /produtos)
 app.get("/produtos", async (_req, res) => {
     try {
         // Desestruturação: extraímos apenas "rows" do objeto retornado.
@@ -30,11 +30,11 @@ app.get("/produtos", async (_req, res) => {
         res.status(500).json({ erro: "erro interno" });
     }
 });
-
+//MOSTRAR (GET /produtos/:id)
 app.get("/produtos/:id", async (req, res) => {
     // req.params.id é SEMPRE string; usamos Number(...) para converter.
     const id = Number(req.params.id);
-
+    
     if (!Number.isInteger(id) || id <= 0) {
         return res.status(400).json({ erro: "id inválido" });
     }
@@ -53,7 +53,7 @@ app.get("/produtos/:id", async (req, res) => {
         res.status(500).json({ erro: "erro interno" });
     }
 });
-
+//CRIAR (POST /produtos)
 app.post("/produtos", async (req, res) => {
     // Extraímos "nome" e "preco" do corpo. Se req.body for undefined, vira {}.
     const { nome, preco } = req.body ?? {};
@@ -78,7 +78,7 @@ app.post("/produtos", async (req, res) => {
         res.status(500).json({ erro: "erro interno" });
     }
 });
-
+//SUBSTITUIR (PUT /produtos/:id)
 app.put("/produtos/:id", async (req, res) => {
     const id = Number(req.params.id);
     const { nome, preco } = req.body ?? {};
@@ -106,7 +106,7 @@ app.put("/produtos/:id", async (req, res) => {
         res.status(500).json({ erro: "erro interno" });
     }
 });
-
+//ATUALIZAR (PATCH /produtos/:id)
 app.patch("/produtos/:id", async (req, res) => {
     const id = Number(req.params.id);
     const { nome, preco } = req.body ?? {};
@@ -143,7 +143,7 @@ app.patch("/produtos/:id", async (req, res) => {
         res.status(500).json({ erro: "erro interno" });
     }
 });
-
+//DELETAR (DELETE /produtos/:id)
 app.delete("/produtos/:id", async (req, res) => {
     const id = Number(req.params.id);
 
@@ -165,5 +165,5 @@ app.delete("/produtos/:id", async (req, res) => {
 });
 
 const PORT = process.env.PORT || 3000;
-
+// Inicia o servidor na porta definida em PORT (3000 se indefinida)
 app.listen(PORT, () => console.log(`http://localhost:${PORT}`));
