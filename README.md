@@ -85,8 +85,8 @@
 |-----------------|--------------------|-------------|-------------------------|
 | id              | número             | sim         | 2                       |
 | Usuario_id      | número (fk)        | sim         | 8f3a-...                |
-| texto           | texto              | sim         | "Erro ao compilar"      |
-| estado          | char               | sim         | 'a' \| 'f'              |
+| nome_produto    | texto              | sim         | "Blusa Biamar"          |
+| preço           | numérico           | sim         | 350.00                  | 
 | dataCriacao     | data/hora          | sim         | 2025-08-20 08:19        |
 | dataAtualizacao | data/hora          | sim         | 2025-08-20 10:00        |
 
@@ -110,8 +110,8 @@ CREATE TABLE Usuarios (
 CREATE TABLE Produtos (
   id                SERIAL       NOT NULL PRIMARY KEY,
   Usuarios_id       BIGINT       NOT NULL REFERENCES Usuarios(id),
-  texto             VARCHAR(255) NOT NULL,
-  estado            CHAR(1)      NOT NULL CHECK (estado IN ('t','n')), -- t=tem, n=não tem
+  nome_produto      VARCHAR(255) NOT NULL,
+  preco             DECIMAL(10, 2),
   urlImagem         VARCHAR(255),
   data_criacao      TIMESTAMP    DEFAULT now(),
   data_atualizacao  TIMESTAMP    DEFAULT now()
@@ -120,5 +120,5 @@ CREATE TABLE Produtos (
 INSERT INTO Usuarios (nome, email, senha_hash, papel) VALUES('Usuário', 'user@user.com.br', '123', 0);
 INSERT INTO Usuarios (nome, email, senha_hash, papel) VALUES('Admin', 'admin@admin.com.br', '123', 1);
 
-INSERT INTO Produtos (usuario_id, texto, estado) VALUES(1, 'Blusa Biamar', 't');
+INSERT INTO Produtos (Usuarios_id, nome_produto, preco) VALUES(1, 'Blusa Biamar', 350.00);
 ```
