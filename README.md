@@ -69,7 +69,7 @@
 
 ### 9.2 Campos por entidade
 
-### Usuario
+### Usuarios
 | Campo           | Tipo                          | Obrigatório | Exemplo            |
 |-----------------|-------------------------------|-------------|--------------------|
 | id              | número                        | sim         | 1                  |
@@ -80,7 +80,7 @@
 | dataCriacao     | data/hora                     | sim         | 2025-08-28 08:19   |
 | dataAtualizacao | data/hora                     | sim         | 2025-08-28 10:00   |
 
-### Sacola
+### Produtos
 | Campo           | Tipo               | Obrigatório | Exemplo                 |
 |-----------------|--------------------|-------------|-------------------------|
 | id              | número             | sim         | 2                       |
@@ -91,8 +91,8 @@
 | dataAtualizacao | data/hora          | sim         | 2025-08-20 10:00        |
 
 ### 9.3 Relações entre entidades
-- Um cliente possui muitos produtos na sacola. (1→N)
-- Uma sacola pertence a um Usuario. (N→1)
+- Um cliente possui muitos produtos. (1→N)
+- Um produto pertence a um Usuario. (N→1)
 
 ### 9.4 Modelagem do banco de dados no POSTGRES
 
@@ -102,7 +102,7 @@ CREATE TABLE Usuarios (
   nome              VARCHAR(255) NOT NULL,
   email             VARCHAR(255) NOT NULL UNIQUE,
   senha_hash        VARCHAR(255) NOT NULL,
-  papel             SMALLINT     NOT NULL CHECK (papel IN (0,1)),  -- 0=aluno, 1=professor
+  papel             SMALLINT     NOT NULL CHECK (papel IN (0,1)),  -- 0=cliente, 1=gerente
   data_criacao      TIMESTAMP    DEFAULT now(),
   data_atualizacao  TIMESTAMP    DEFAULT now()
 );
@@ -111,7 +111,7 @@ CREATE TABLE Chamados (
   id                SERIAL       NOT NULL PRIMARY KEY,
   Usuarios_id       BIGINT       NOT NULL REFERENCES Usuarios(id),
   texto             VARCHAR(255) NOT NULL,
-  estado            CHAR(1)      NOT NULL CHECK (estado IN ('a','f')), -- a=aberto, f=fechado
+  estado            CHAR(1)      NOT NULL CHECK (estado IN ('t','n')), -- t=tem, n=não tem
   urlImagem         VARCHAR(255),
   data_criacao      TIMESTAMP    DEFAULT now(),
   data_atualizacao  TIMESTAMP    DEFAULT now()
@@ -120,5 +120,5 @@ CREATE TABLE Chamados (
 INSERT INTO Usuarios (nome, email, senha_hash, papel) VALUES('Usuário', 'user@user.com.br', '123', 0);
 INSERT INTO Usuarios (nome, email, senha_hash, papel) VALUES('Admin', 'admin@admin.com.br', '123', 1);
 
-INSERT INTO Chamados (usuario_id, texto, estado) VALUES(1, 'Preciso de ajuda com JS', 'a');
+INSERT INTO Produtos (usuario_id, texto, estado) VALUES(1, 'Blusa Biamar', 't');
 ```
