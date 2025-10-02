@@ -107,7 +107,7 @@ CREATE TABLE Usuarios (
   data_atualizacao  TIMESTAMP    DEFAULT now()
 );
 
-CREATE TABLE Chamados (
+CREATE TABLE Produtos (
   id                SERIAL       NOT NULL PRIMARY KEY,
   Usuarios_id       BIGINT       NOT NULL REFERENCES Usuarios(id),
   texto             VARCHAR(255) NOT NULL,
