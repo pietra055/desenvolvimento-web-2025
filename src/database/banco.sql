@@ -1,6 +1,5 @@
 DROP DATABASE IF EXISTS loja_api_db;
 CREATE DATABASE loja_api_db;
-\c loja_api_db;
 
 CREATE TABLE Usuarios (
   id                SERIAL       NOT NULL PRIMARY KEY,
@@ -26,3 +25,4 @@ INSERT INTO Usuarios (nome, email, senha_hash, papel) VALUES('Usuário', 'user@u
 INSERT INTO Usuarios (nome, email, senha_hash, papel) VALUES('Admin', 'admin@admin.com.br', '123', 1);
 
 INSERT INTO Produtos (Usuarios_id, nome_produto, preco) VALUES(1, 'Blusa Biamar', 350.00);
+INSERT INTO Produtos (Usuarios_id, nome_produto, preco) VALUES(1, 'Calça Jeans', 200.00);
