@@ -33,7 +33,7 @@ const HOST = process.env.PGHOST || process.env.DB_HOST || "localhost";
 const PORT = process.env.PGPORT || process.env.DB_PORT || "5432"; // pode ser string
 const DATABASE = process.env.PGDATABASE || process.env.DB_DATABASE || "loja_api_db";
 const USER = process.env.PGUSER || process.env.DB_USER || "postgres";
-const PASSWORD = process.env.PGPASSWORD || process.env.DB_PASSWORD || "1004";
+const PASSWORD = process.env.PGPASSWORD || process.env.DB_PASSWORD || "9236";
 // 5) Cria o "pool" de conexões com as credenciais definidas acima.
 //    • Esse pool mantém conexões abertas e distribui para cada query.
 //    • Em provedores gerenciados, às vezes é necessário habilitar SSL.

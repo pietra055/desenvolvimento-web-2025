@@ -87,29 +87,22 @@ router.get("/:id", async (req, res) => {
 // Dica: se o cliente não enviar JSON, req.body pode ser undefined. O "?? {}"
 // abaixo garante um objeto vazio como fallback para evitar erro ao desestruturar.
 router.post("/", async (req, res) => {
-  const { nome, preco } = req.body ?? {}; // extrai chaves do corpo (ou {})
+  const { nome_produto, preco, Usuarios_id } = req.body ?? {};
 
-  // Converter "preco" para número. Se falhar, vira NaN.
   const p = Number(preco);
 
-  // Regras de validação:
-  // - nome precisa existir (não vazio/null/undefined)
-  // - preco não pode ser null/undefined (por isso checamos "preco == null")
-  //   Obs.: Number(null) === 0, então checamos null/undefined ANTES de converter.
-  // - p precisa ser um número válido (não NaN)
-  // - p não pode ser negativo
-  if (!nome || preco == null || Number.isNaN(p) || p < 0) {
-    return res.status(400).json({ erro: "nome e preco (>= 0) obrigatórios" });
+  if (!nome_produto || preco == null || Number.isNaN(p) || p < 0 || !Usuarios_id) {
+    return res.status(400).json({ erro: "nome_produto, preco (>= 0) e Usuarios_id obrigatórios" });
   }
 
   try {
-    // INSERT com RETURNING * devolve a linha inserida (inclui id gerado, etc.).
     const { rows } = await pool.query(
-      "INSERT INTO produtos (nome, preco) VALUES ($1, $2) RETURNING *",
-      [nome, p]
+      "INSERT INTO produtos (nome_produto, preco, Usuarios_id) VALUES ($1, $2, $3) RETURNING *",
+      [nome_produto, p, Usuarios_id]
     );
-    res.status(201).json(rows[0]); // 201 Created
-  } catch {
+    res.status(201).json(rows[0]);
+  } catch (err) {
+    console.error(err);
     res.status(500).json({ erro: "erro interno" });
   }
 });
@@ -121,22 +114,22 @@ router.post("/", async (req, res) => {
 // Requer: { nome, preco } válidos. Se faltar algo, retorna 400.
 router.put("/:id", async (req, res) => {
   const id = Number(req.params.id);
-  const { nome, preco } = req.body ?? {};
+  const { nome_produto, preco } = req.body ?? {};
   const p = Number(preco);
 
   // Validação do id
   if (!Number.isInteger(id) || id <= 0) return res.status(400).json({ erro: "id inválido" });
 
   // Validação dos campos (mesmas regras do POST)
-  if (!nome || preco == null || Number.isNaN(p) || p < 0) {
-    return res.status(400).json({ erro: "nome e preco (>= 0) obrigatórios" });
+  if (!nome_produto || preco == null || Number.isNaN(p) || p < 0) {
+    return res.status(400).json({ erro: "nome_produto e preco (>= 0) obrigatórios" });
   }
 
   try {
     // Atualiza SEM preservar o valor anterior: ambos os campos são substituídos.
     const { rows } = await pool.query(
-      "UPDATE produtos SET nome = $1, preco = $2 WHERE id = $3 RETURNING *",
-      [nome, p, id]
+      "UPDATE produtos SET nome_produto = $1, preco = $2 WHERE id = $3 RETURNING *",
+      [nome_produto, p, id]
     );
 
     // Se rows[0] não existe, id não foi encontrado na tabela.
@@ -162,14 +155,14 @@ router.put("/:id", async (req, res) => {
 //   Aí COALESCE($1, nome) mantém o "nome" que já está no banco.
 router.patch("/:id", async (req, res) => {
   const id = Number(req.params.id);
-  const { nome, preco } = req.body ?? {};
+  const { nome_produto, preco } = req.body ?? {};
 
   // Validação do id
   if (!Number.isInteger(id) || id <= 0) return res.status(400).json({ erro: "id inválido" });
 
   // Se nenhum campo foi enviado, não há o que atualizar.
-  if (nome === undefined && preco === undefined) {
-    return res.status(400).json({ erro: "envie nome e/ou preco" });
+  if (nome_produto === undefined && preco === undefined) {
+    return res.status(400).json({ erro: "envie nome do produto e/ou preco" });
   }
 
   // "p" começa como null para o caso de NÃO querermos mexer no preco.
@@ -183,12 +176,11 @@ router.patch("/:id", async (req, res) => {
       return res.status(400).json({ erro: "preco deve ser número >= 0" });
     }
   }
-
   try {
     // Para "nome": usamos nome ?? null (undefined → null) para acionar o COALESCE.
     const { rows } = await pool.query(
-      "UPDATE produtos SET nome = COALESCE($1, nome), preco = COALESCE($2, preco) WHERE id = $3 RETURNING *",
-      [nome ?? null, p, id]
+      "UPDATE produtos SET nome_produto = COALESCE($1, nome_produto), preco = COALESCE($2, preco) WHERE id = $3 RETURNING *",
+      [nome_produto ?? null, p, id]
     );
 
     if (!rows[0]) return res.status(404).json({ erro: "não encontrado" });
