@@ -1,8 +1,6 @@
-DROP DATABASE IF EXISTS loja_api_db;
-CREATE DATABASE loja_api_db;
-\c loja_api_db;
+SET client_encoding = 'UTF8';
 
-CREATE TABLE Usuarios (
+CREATE TABLE IF NOT EXISTS Usuarios (
   id                SERIAL       NOT NULL PRIMARY KEY,
   nome              VARCHAR(255) NOT NULL,
   email             VARCHAR(255) NOT NULL UNIQUE,
@@ -12,7 +10,7 @@ CREATE TABLE Usuarios (
   data_atualizacao  TIMESTAMP    DEFAULT now()
 );
 
-CREATE TABLE Produtos (
+CREATE TABLE IF NOT EXISTS Produtos (
   id                SERIAL       NOT NULL PRIMARY KEY,
   Usuarios_id       BIGINT       NOT NULL REFERENCES Usuarios(id),
   nome_produto      VARCHAR(255) NOT NULL,
